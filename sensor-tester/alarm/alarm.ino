@@ -11,7 +11,7 @@ const unsigned int calibrationTime = 60000;
 
 void setup() {
 
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   pinMode(ledPin, OUTPUT);  // declare LED as output
   pinMode(sensorPin, INPUT); // declare sensor as input
@@ -22,7 +22,11 @@ void setup() {
     delay(ledBlinkTime);
     digitalWrite(ledPin, LOW);
     delay(ledBlinkTime);  
+    Serial.print(".");
   }
+
+  // Print to console when sensor is calibrated
+  Serial.print("\n PIR sensor finished calibrating");
 
 }
 
